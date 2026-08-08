@@ -15,8 +15,8 @@
 <style>
 :root{
   --ink:#0d0b09; --lacquer:#161210; --panel:#1e1915; --panel2:#272019; --line:#3a3026;
-  --vermillion:#A11D22; --verm-soft:#c5333a; --gold:#B08A33; --gold-soft:#CDA85C;
-  --rice:#f6f2ea; --muted:#a08e78; --jade:#7ba888;
+  --vermillion:#A11D22; --verm-soft:#d0454c; --gold:#C9A244; --gold-soft:#E4C578;
+  --rice:#f6f2ea; --muted:#bcab92; --jade:#8fbf9c;
 }
 *{box-sizing:border-box; margin:0; padding:0; -webkit-font-smoothing:antialiased;}
 body{background:#080706; color:var(--rice); font-family:Georgia,'Times New Roman',serif; min-height:100vh; padding:40px 16px 60px;}
@@ -57,7 +57,7 @@ body{background:#080706; color:var(--rice); font-family:Georgia,'Times New Roman
 .apphead{position:relative; z-index:1; padding:10px 0 4px; display:flex; align-items:center; gap:12px;}
 .seal{width:44px; height:44px; background:var(--vermillion); border-radius:9px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:17px; font-family:Georgia,serif; box-shadow:0 4px 18px #A11D2255; flex-shrink:0;}
 .apphead .t1{font-size:23px; letter-spacing:.02em; line-height:1;}
-.apphead .t2{font-family:Verdana,Geneva,sans-serif; font-size:8.5px; letter-spacing:.42em; text-transform:uppercase; color:var(--gold); margin-top:5px;}
+.apphead .t2{font-family:Verdana,Geneva,sans-serif; font-size:10.5px; font-weight:bold; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-top:5px;}
 .vertmark{position:absolute; right:-2px; top:6px; writing-mode:vertical-rl; font-size:11px; letter-spacing:.5em; color:#B08A3366;}
 
 /* search */
@@ -69,19 +69,19 @@ body{background:#080706; color:var(--rice); font-family:Georgia,'Times New Roman
 .stats{position:relative; z-index:1; display:flex; gap:10px; margin:12px 0 2px;}
 .stat{flex:1; background:linear-gradient(160deg,var(--panel),var(--panel2)); border:1px solid var(--line); border-radius:14px; padding:12px 8px 10px; text-align:center;}
 .stat .n{font-size:24px; color:var(--gold-soft);}
-.stat .l{font-family:Verdana,Geneva,sans-serif; font-size:7.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin-top:3px;}
+.stat .l{font-family:Verdana,Geneva,sans-serif; font-size:9px; font-weight:bold; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin-top:3px;}
 
 /* section titles */
 .sect{position:relative; z-index:1; display:flex; align-items:center; gap:10px; margin:22px 0 12px;}
 .sect .kanji{font-size:15px; color:var(--vermillion);}
 .sect h2{font-size:17px; font-weight:normal; letter-spacing:.04em; white-space:nowrap;}
 .sect .ln{height:1px; flex:1; background:linear-gradient(90deg,var(--gold)55,transparent);}
-.sect .cnt{font-family:Verdana,Geneva,sans-serif; font-size:9px; color:var(--muted); letter-spacing:.1em;}
+.sect .cnt{font-family:Verdana,Geneva,sans-serif; font-size:10.5px; font-weight:bold; color:var(--muted); letter-spacing:.1em;}
 
 /* spirit filter pills */
 .pills{position:relative; z-index:1; display:flex; gap:8px; overflow-x:auto; padding:8px 0 6px; scrollbar-width:none;}
 .pills::-webkit-scrollbar{display:none;}
-.pill{flex-shrink:0; font-family:Verdana,Geneva,sans-serif; font-size:10px; letter-spacing:.12em; text-transform:uppercase; padding:8px 15px; border-radius:999px; border:1px solid var(--line); color:var(--muted); background:transparent; cursor:pointer;}
+.pill{flex-shrink:0; font-family:Verdana,Geneva,sans-serif; font-size:12px; font-weight:bold; letter-spacing:.1em; text-transform:uppercase; padding:9px 16px; border-radius:999px; border:1px solid #5f5140; color:#e6dcc8; background:transparent; cursor:pointer;}
 .pill.on{background:var(--vermillion); border-color:var(--vermillion); color:#fff; box-shadow:0 4px 14px #A11D2255;}
 
 /* drink cards */
@@ -91,9 +91,9 @@ body{background:#080706; color:var(--rice); font-family:Georgia,'Times New Roman
 .dcard .pic svg{border-radius:11px; display:block;}
 .dcard .inf{flex:1; min-width:0; padding-top:2px;}
 .dcard h3{font-size:16.5px; font-weight:normal; letter-spacing:.02em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.dcard .sub{font-family:Verdana,Geneva,sans-serif; font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-top:5px;}
+.dcard .sub{font-family:Verdana,Geneva,sans-serif; font-size:10.5px; font-weight:bold; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-top:5px;}
 .dcard .glass{font-size:11.5px; color:var(--muted); font-style:italic; margin-top:6px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.dcard .rk{position:absolute; top:-7px; right:12px; background:var(--gold); color:#1a120a; font-family:Verdana,Geneva,sans-serif; font-size:8.5px; letter-spacing:.08em; padding:3px 9px; border-radius:999px;}
+.dcard .rk{position:absolute; top:-7px; right:12px; background:var(--gold); color:#171007; font-family:Verdana,Geneva,sans-serif; font-size:9.5px; font-weight:bold; letter-spacing:.08em; padding:3px 9px; border-radius:999px;}
 .dcard .miss{font-family:Verdana,Geneva,sans-serif; font-size:9px; color:var(--verm-soft); margin-top:6px; letter-spacing:.03em;}
 .dcard.dim{opacity:.78; border-style:dashed;}
 
@@ -103,13 +103,13 @@ body{background:#080706; color:var(--rice); font-family:Georgia,'Times New Roman
   radial-gradient(100% 120% at 0% 100%, #B08A3322 0%, transparent 55%),
   linear-gradient(160deg,#241c14,#171310);
   padding:16px 16px 14px; margin:14px 0 4px; display:flex; gap:14px; align-items:center; cursor:pointer;}
-.feat .fx{font-family:Verdana,Geneva,sans-serif; font-size:8px; letter-spacing:.35em; text-transform:uppercase; color:var(--gold);}
+.feat .fx{font-family:Verdana,Geneva,sans-serif; font-size:9.5px; font-weight:bold; letter-spacing:.35em; text-transform:uppercase; color:var(--gold);}
 .feat h3{font-size:21px; font-weight:normal; margin-top:6px;}
 .feat p{font-size:12px; color:var(--muted); font-style:italic; margin-top:6px; line-height:1.5;}
 
 /* inventory (My Bar) */
 .grp{position:relative; z-index:1; margin-bottom:18px;}
-.grp h3{font-family:Verdana,Geneva,sans-serif; font-size:9px; letter-spacing:.28em; text-transform:uppercase; color:var(--gold); margin-bottom:9px;}
+.grp h3{font-family:Verdana,Geneva,sans-serif; font-size:10.5px; font-weight:bold; letter-spacing:.28em; text-transform:uppercase; color:var(--gold); margin-bottom:9px;}
 .chips{display:flex; flex-wrap:wrap; gap:7px;}
 .chip{display:inline-flex; align-items:center; gap:7px; padding:8px 13px; border-radius:999px; border:1px solid var(--line); background:var(--panel); font-size:12.5px; cursor:pointer; color:var(--muted);}
 .chip .dot{width:7px; height:7px; border-radius:50%; background:#4d4237;}
@@ -123,7 +123,7 @@ body{background:#080706; color:var(--rice); font-family:Georgia,'Times New Roman
 .brow .pic svg{border-radius:9px; display:block;}
 .brow .inf{flex:1; min-width:0;}
 .brow h3{font-size:15.5px; font-weight:normal; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.brow .sub{font-family:Verdana,Geneva,sans-serif; font-size:8.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-top:4px;}
+.brow .sub{font-family:Verdana,Geneva,sans-serif; font-size:10px; font-weight:bold; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-top:4px;}
 .sdot{width:8px; height:8px; border-radius:50%; flex-shrink:0;}
 .sdot.in{background:var(--jade); box-shadow:0 0 8px #7ba88888;}
 .sdot.out{background:#6e4030;}
@@ -149,7 +149,7 @@ body{background:#080706; color:var(--rice); font-family:Georgia,'Times New Roman
 .sheet .hero svg{border-radius:14px; display:block;}
 .sheet h2{font-size:25px; font-weight:normal; line-height:1.15;}
 .sheet .meta{display:flex; flex-wrap:wrap; gap:6px; margin-top:9px;}
-.badge{font-family:Verdana,Geneva,sans-serif; font-size:8px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); border:1px solid #574424; border-radius:999px; padding:3.5px 9px;}
+.badge{font-family:Verdana,Geneva,sans-serif; font-size:9.5px; font-weight:bold; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); border:1px solid #574424; border-radius:999px; padding:3.5px 9px;}
 .badge.v{color:#fff; background:var(--vermillion); border-color:var(--vermillion);}
 .sheet .ing{margin-top:18px;}
 .sheet .ing li{list-style:none; display:flex; gap:12px; padding:8px 0; border-bottom:1px dotted #33291f; font-size:14.5px;}
@@ -179,9 +179,9 @@ body{background:#080706; color:var(--rice); font-family:Georgia,'Times New Roman
 
 /* tab bar */
 .tabbar{position:absolute; bottom:0; left:0; right:0; z-index:70; display:flex; background:#100d0aee; backdrop-filter:blur(14px); border-top:1px solid #2c241b; padding:10px 8px 26px;}
-.tb{flex:1; text-align:center; cursor:pointer; color:#6e604e;}
-.tb .k{font-size:16px; display:block;}
-.tb .l{font-family:Verdana,Geneva,sans-serif; font-size:7.5px; letter-spacing:.14em; text-transform:uppercase; margin-top:4px; display:block;}
+.tb{flex:1; text-align:center; cursor:pointer; color:#a89878;}
+.tb .k{font-size:25px; display:block;}
+.tb .l{font-family:Verdana,Geneva,sans-serif; font-size:10.5px; font-weight:bold; letter-spacing:.06em; text-transform:uppercase; margin-top:5px; display:block;}
 .tb.on{color:var(--gold-soft);}
 .tb.on .k{color:var(--vermillion);}
 @media (max-width:820px){ .spec{max-width:400px;} }
@@ -195,6 +195,7 @@ body{padding:0; background:var(--ink);}
 .notch,.statusbar{display:none;}
 .appbody{padding-top:calc(env(safe-area-inset-top) + 10px);}
 .tabbar{padding-bottom:calc(env(safe-area-inset-bottom) + 14px);}
+.sheet{padding-bottom:calc(env(safe-area-inset-bottom) + 40px);}
 </style>
 </head>
 <body>
@@ -241,7 +242,7 @@ body{padding:0; background:var(--ink);}
         <div class="stats">
           <div class="stat"><div class="n" id="stMake">0</div><div class="l">Pour now</div></div>
           <div class="stat"><div class="n" id="stAway">0</div><div class="l">One away</div></div>
-          <div class="stat"><div class="n">88</div><div class="l">Library</div></div>
+          <div class="stat"><div class="n" id="stLib">88</div><div class="l">Library</div></div>
         </div>
         <div class="feat" id="featured"></div>
         <div class="pills" id="pills"></div>
@@ -298,11 +299,13 @@ body{padding:0; background:var(--ink);}
         </div>
       </div>
 
-      <!-- DETAIL SHEET -->
-      <div class="sheet-wrap" id="sheetWrap">
-        <div class="scrim" id="scrim"></div>
-        <div class="sheet" id="sheet"></div>
-      </div>
+    </div>
+
+    <!-- DETAIL SHEET — anchored to the visible screen, not the scroll position,
+         so the recipe opens in place and closing returns you exactly where you were -->
+    <div class="sheet-wrap" id="sheetWrap">
+      <div class="scrim" id="scrim"></div>
+      <div class="sheet" id="sheet"></div>
     </div>
 
     <div class="tabbar">
@@ -319,12 +322,12 @@ body{padding:0; background:var(--ink);}
 const DATA = {
   "meta": {
     "title": "Terry's Home Bar — Cocktail Library",
-    "generated": "2026-08-07",
+    "generated": "2026-08-08",
     "rankingSource": {
       "name": "Drinks International — The Bestselling Classic Cocktails at the World's Best Bars, 2026",
       "url": "https://drinksint.com/the-bestselling-classic-cocktails-at-the-worlds-best-bars-2026/"
     },
-    "notes": "worldRank = DI 2026 position (null = house pick). inStock/missing computed against Terry's inventory of 2026-08-07. img field is empty — drop in licensed photo URLs per drink. Garnishes are recommendations and never gate availability."
+    "notes": "worldRank = DI 2026 position (null = house pick). inStock/missing computed against Terry's inventory of 2026-08-08. img field is empty — drop in licensed photo URLs per drink. Garnishes are recommendations and never gate availability."
   },
   "inventory": [
     {
@@ -367,7 +370,12 @@ const DATA = {
         },
         {
           "id": "tequila",
-          "label": "Tequila / Mezcal",
+          "label": "Tequila",
+          "inStock": true
+        },
+        {
+          "id": "mezcal",
+          "label": "Mezcal",
           "inStock": true
         },
         {
@@ -382,7 +390,12 @@ const DATA = {
         },
         {
           "id": "scotch",
-          "label": "Scotch / Irish whiskey",
+          "label": "Scotch",
+          "inStock": true
+        },
+        {
+          "id": "irish",
+          "label": "Irish whiskey",
           "inStock": true
         },
         {
@@ -402,12 +415,17 @@ const DATA = {
       "items": [
         {
           "id": "orange_liq",
-          "label": "Orange liqueur (triple sec / Cointreau)",
+          "label": "Cointreau / triple sec (orange liqueur)",
           "inStock": true
         },
         {
           "id": "amaretto",
-          "label": "Amaretto / Irish cream",
+          "label": "Amaretto",
+          "inStock": true
+        },
+        {
+          "id": "baileys",
+          "label": "Bailey's Irish Cream",
           "inStock": true
         },
         {
@@ -457,12 +475,22 @@ const DATA = {
         },
         {
           "id": "ginger_beer",
-          "label": "Ginger beer (Fever-Tree) / ginger ale",
+          "label": "Ginger beer (Fever-Tree)",
+          "inStock": true
+        },
+        {
+          "id": "ginger_ale",
+          "label": "Ginger ale",
           "inStock": true
         },
         {
           "id": "cola",
-          "label": "Cola / lemon-lime soda",
+          "label": "Cola / Coke",
+          "inStock": true
+        },
+        {
+          "id": "lemon_lime",
+          "label": "Sprite / 7-Up (lemon-lime)",
           "inStock": true
         },
         {
@@ -557,12 +585,12 @@ const DATA = {
         },
         {
           "id": "espresso",
-          "label": "Espresso / hot coffee",
+          "label": "Coffee / espresso",
           "inStock": false
         },
         {
           "id": "tomato",
-          "label": "Bloody Mary mix / tomato juice",
+          "label": "Tomato juice / V-8 / Bloody Mary mix",
           "inStock": false
         },
         {
@@ -663,6 +691,11 @@ const DATA = {
         {
           "id": "cachaca",
           "label": "Cachaça",
+          "inStock": false
+        },
+        {
+          "id": "worcestershire",
+          "label": "Worcestershire sauce",
           "inStock": false
         }
       ]
@@ -809,11 +842,11 @@ const DATA = {
       "requires": [
         {
           "id": "tequila",
-          "label": "Tequila / Mezcal"
+          "label": "Tequila"
         },
         {
           "id": "orange_liq",
-          "label": "Orange liqueur (triple sec / Cointreau)"
+          "label": "Cointreau / triple sec (orange liqueur)"
         },
         {
           "id": "citrus",
@@ -957,7 +990,7 @@ const DATA = {
         },
         {
           "id": "espresso",
-          "label": "Espresso / hot coffee"
+          "label": "Coffee / espresso"
         },
         {
           "id": "simple",
@@ -976,7 +1009,7 @@ const DATA = {
       "inStock": false,
       "missing": [
         "Coffee liqueur",
-        "Espresso / hot coffee"
+        "Coffee / espresso"
       ],
       "img": ""
     },
@@ -1100,7 +1133,7 @@ const DATA = {
       "requires": [
         {
           "id": "tequila",
-          "label": "Tequila / Mezcal"
+          "label": "Tequila"
         },
         {
           "id": "grapefruit",
@@ -1248,7 +1281,7 @@ const DATA = {
       "requires": [
         {
           "id": "amaretto",
-          "label": "Amaretto / Irish cream"
+          "label": "Amaretto"
         },
         {
           "id": "bourbon",
@@ -1416,11 +1449,15 @@ const DATA = {
         },
         {
           "id": "tomato",
-          "label": "Bloody Mary mix / tomato juice"
+          "label": "Tomato juice / V-8 / Bloody Mary mix"
         },
         {
           "id": "citrus",
           "label": "Fresh lemons / limes"
+        },
+        {
+          "id": "worcestershire",
+          "label": "Worcestershire sauce"
         }
       ],
       "method": "Roll between tins, serve over ice.",
@@ -1432,7 +1469,8 @@ const DATA = {
       "sourceUrl": null,
       "inStock": false,
       "missing": [
-        "Bloody Mary mix / tomato juice"
+        "Tomato juice / V-8 / Bloody Mary mix",
+        "Worcestershire sauce"
       ],
       "img": ""
     },
@@ -1512,7 +1550,7 @@ const DATA = {
         },
         {
           "id": "ginger_beer",
-          "label": "Ginger beer (Fever-Tree) / ginger ale"
+          "label": "Ginger beer (Fever-Tree)"
         },
         {
           "id": "citrus",
@@ -1740,7 +1778,7 @@ const DATA = {
       "requires": [
         {
           "id": "scotch",
-          "label": "Scotch / Irish whiskey"
+          "label": "Scotch"
         },
         {
           "id": "honey",
@@ -1974,7 +2012,7 @@ const DATA = {
         },
         {
           "id": "orange_liq",
-          "label": "Orange liqueur (triple sec / Cointreau)"
+          "label": "Cointreau / triple sec (orange liqueur)"
         },
         {
           "id": "citrus",
@@ -2453,12 +2491,12 @@ const DATA = {
       ],
       "requires": [
         {
-          "id": "tequila",
-          "label": "Tequila / Mezcal"
+          "id": "mezcal",
+          "label": "Mezcal"
         },
         {
           "id": "orange_liq",
-          "label": "Orange liqueur (triple sec / Cointreau)"
+          "label": "Cointreau / triple sec (orange liqueur)"
         },
         {
           "id": "citrus",
@@ -2790,7 +2828,7 @@ const DATA = {
         },
         {
           "id": "cola",
-          "label": "Cola / lemon-lime soda"
+          "label": "Cola / Coke"
         },
         {
           "id": "citrus",
@@ -2991,7 +3029,7 @@ const DATA = {
         },
         {
           "id": "orange_liq",
-          "label": "Orange liqueur (triple sec / Cointreau)"
+          "label": "Cointreau / triple sec (orange liqueur)"
         },
         {
           "id": "citrus",
@@ -3098,8 +3136,8 @@ const DATA = {
       ],
       "requires": [
         {
-          "id": "tequila",
-          "label": "Tequila / Mezcal"
+          "id": "mezcal",
+          "label": "Mezcal"
         },
         {
           "id": "chartreuse",
@@ -3309,7 +3347,7 @@ const DATA = {
         },
         {
           "id": "orange_liq",
-          "label": "Orange liqueur (triple sec / Cointreau)"
+          "label": "Cointreau / triple sec (orange liqueur)"
         },
         {
           "id": "citrus",
@@ -3437,7 +3475,7 @@ const DATA = {
       "requires": [
         {
           "id": "scotch",
-          "label": "Scotch / Irish whiskey"
+          "label": "Scotch"
         },
         {
           "id": "soda",
@@ -3480,7 +3518,7 @@ const DATA = {
       "requires": [
         {
           "id": "scotch",
-          "label": "Scotch / Irish whiskey"
+          "label": "Scotch"
         },
         {
           "id": "sweet_verm",
@@ -3523,11 +3561,11 @@ const DATA = {
       "requires": [
         {
           "id": "scotch",
-          "label": "Scotch / Irish whiskey"
+          "label": "Scotch"
         },
         {
           "id": "amaretto",
-          "label": "Amaretto / Irish cream"
+          "label": "Amaretto"
         }
       ],
       "method": "Stir in the glass over ice.",
@@ -3676,12 +3714,12 @@ const DATA = {
       ],
       "requires": [
         {
-          "id": "scotch",
-          "label": "Scotch / Irish whiskey"
+          "id": "irish",
+          "label": "Irish whiskey"
         },
         {
           "id": "espresso",
-          "label": "Espresso / hot coffee"
+          "label": "Coffee / espresso"
         },
         {
           "id": "simple",
@@ -3703,7 +3741,7 @@ const DATA = {
       "sourceUrl": null,
       "inStock": false,
       "missing": [
-        "Espresso / hot coffee",
+        "Coffee / espresso",
         "Cream / milk"
       ],
       "img": ""
@@ -3783,7 +3821,7 @@ const DATA = {
       "requires": [
         {
           "id": "tequila",
-          "label": "Tequila / Mezcal"
+          "label": "Tequila"
         },
         {
           "id": "soda",
@@ -3831,7 +3869,7 @@ const DATA = {
       "requires": [
         {
           "id": "tequila",
-          "label": "Tequila / Mezcal"
+          "label": "Tequila"
         },
         {
           "id": "marg_mix",
@@ -3875,7 +3913,7 @@ const DATA = {
       "requires": [
         {
           "id": "tequila",
-          "label": "Tequila / Mezcal"
+          "label": "Tequila"
         },
         {
           "id": "citrus",
@@ -3926,7 +3964,11 @@ const DATA = {
       "requires": [
         {
           "id": "tequila",
-          "label": "Tequila / Mezcal"
+          "label": "Tequila"
+        },
+        {
+          "id": "mezcal",
+          "label": "Mezcal"
         },
         {
           "id": "honey",
@@ -3973,11 +4015,11 @@ const DATA = {
       "requires": [
         {
           "id": "tequila",
-          "label": "Tequila / Mezcal"
+          "label": "Tequila"
         },
         {
           "id": "ginger_beer",
-          "label": "Ginger beer (Fever-Tree) / ginger ale"
+          "label": "Ginger beer (Fever-Tree)"
         },
         {
           "id": "citrus",
@@ -4025,7 +4067,7 @@ const DATA = {
       "requires": [
         {
           "id": "tequila",
-          "label": "Tequila / Mezcal"
+          "label": "Tequila"
         },
         {
           "id": "cassis",
@@ -4033,7 +4075,7 @@ const DATA = {
         },
         {
           "id": "ginger_beer",
-          "label": "Ginger beer (Fever-Tree) / ginger ale"
+          "label": "Ginger beer (Fever-Tree)"
         },
         {
           "id": "citrus",
@@ -4078,7 +4120,7 @@ const DATA = {
       "requires": [
         {
           "id": "tequila",
-          "label": "Tequila / Mezcal"
+          "label": "Tequila"
         },
         {
           "id": "oj",
@@ -4132,7 +4174,7 @@ const DATA = {
         },
         {
           "id": "ginger_beer",
-          "label": "Ginger beer (Fever-Tree) / ginger ale"
+          "label": "Ginger beer (Fever-Tree)"
         },
         {
           "id": "citrus",
@@ -4605,7 +4647,7 @@ const DATA = {
         },
         {
           "id": "orange_liq",
-          "label": "Orange liqueur (triple sec / Cointreau)"
+          "label": "Cointreau / triple sec (orange liqueur)"
         },
         {
           "id": "cranberry",
@@ -4814,7 +4856,7 @@ const DATA = {
         },
         {
           "id": "orange_liq",
-          "label": "Orange liqueur (triple sec / Cointreau)"
+          "label": "Cointreau / triple sec (orange liqueur)"
         },
         {
           "id": "citrus",
@@ -5099,11 +5141,11 @@ const DATA = {
         },
         {
           "id": "tequila",
-          "label": "Tequila / Mezcal"
+          "label": "Tequila"
         },
         {
           "id": "orange_liq",
-          "label": "Orange liqueur (triple sec / Cointreau)"
+          "label": "Cointreau / triple sec (orange liqueur)"
         },
         {
           "id": "citrus",
@@ -5115,7 +5157,7 @@ const DATA = {
         },
         {
           "id": "cola",
-          "label": "Cola / lemon-lime soda"
+          "label": "Cola / Coke"
         }
       ],
       "method": "Build over ice, cola last.",
@@ -5210,6 +5252,362 @@ const DATA = {
         "Crème de cassis / mûre"
       ],
       "img": ""
+    },
+    {
+      "id": "mudslide",
+      "name": "Mudslide",
+      "worldRank": null,
+      "spirit": "Vodka",
+      "strength": "Medium",
+      "glass": "Rocks glass",
+      "ingredients": [
+        {
+          "amount": "1 oz",
+          "item": "vodka"
+        },
+        {
+          "amount": "1 oz",
+          "item": "coffee liqueur"
+        },
+        {
+          "amount": "1 oz",
+          "item": "Bailey's Irish Cream"
+        },
+        {
+          "amount": "Splash",
+          "item": "cream"
+        }
+      ],
+      "requires": [
+        {
+          "id": "vodka",
+          "label": "Vodka"
+        },
+        {
+          "id": "coffee_liq",
+          "label": "Coffee liqueur"
+        },
+        {
+          "id": "baileys",
+          "label": "Bailey's Irish Cream"
+        },
+        {
+          "id": "cream",
+          "label": "Cream / milk"
+        }
+      ],
+      "method": "Shake with ice and strain over fresh ice — or blend with vanilla ice cream for the dessert version.",
+      "note": null,
+      "settings": [
+        "Party",
+        "Ski resort",
+        "Winter holidays"
+      ],
+      "source": "Wreck Bar, Rum Point, Grand Cayman, 1970s",
+      "sourceUrl": null,
+      "img": "",
+      "missing": [
+        "Coffee liqueur",
+        "Cream / milk"
+      ],
+      "inStock": false
+    },
+    {
+      "id": "b-52",
+      "name": "B-52",
+      "worldRank": null,
+      "spirit": "Mixed",
+      "strength": "Boozy",
+      "glass": "Shot glass",
+      "ingredients": [
+        {
+          "amount": "⅓ each",
+          "item": "coffee liqueur (bottom)"
+        },
+        {
+          "amount": "⅓ each",
+          "item": "Bailey's (middle)"
+        },
+        {
+          "amount": "⅓ each",
+          "item": "orange liqueur (top)"
+        }
+      ],
+      "requires": [
+        {
+          "id": "coffee_liq",
+          "label": "Coffee liqueur"
+        },
+        {
+          "id": "baileys",
+          "label": "Bailey's Irish Cream"
+        },
+        {
+          "id": "orange_liq",
+          "label": "Cointreau / triple sec (orange liqueur)"
+        }
+      ],
+      "method": "Layer carefully over the back of a bar spoon, in order: coffee liqueur, Baileys, orange liqueur.",
+      "note": null,
+      "settings": [
+        "Party"
+      ],
+      "source": "Peter Fich, Banff Springs Hotel, Alberta, 1977",
+      "sourceUrl": null,
+      "img": "",
+      "missing": [
+        "Coffee liqueur"
+      ],
+      "inStock": false
+    },
+    {
+      "id": "horses-neck",
+      "name": "Horse's Neck",
+      "worldRank": null,
+      "spirit": "Whiskey",
+      "strength": "Light",
+      "glass": "Highball",
+      "ingredients": [
+        {
+          "amount": "2 oz",
+          "item": "bourbon"
+        },
+        {
+          "amount": "Top",
+          "item": "ginger ale"
+        },
+        {
+          "amount": "1",
+          "item": "long lemon peel spiral"
+        }
+      ],
+      "requires": [
+        {
+          "id": "bourbon",
+          "label": "Bourbon"
+        },
+        {
+          "id": "ginger_ale",
+          "label": "Ginger ale"
+        },
+        {
+          "id": "citrus",
+          "label": "Fresh lemons / limes"
+        }
+      ],
+      "method": "Build over ice; drape the full lemon spiral over the rim — that is the horse's neck.",
+      "note": null,
+      "settings": [
+        "Office party",
+        "Party"
+      ],
+      "source": "American classic, c. 1900 — a Navy wardroom staple",
+      "sourceUrl": null,
+      "img": "",
+      "missing": [],
+      "inStock": true
+    },
+    {
+      "id": "lynchburg-lemonade",
+      "name": "Lynchburg Lemonade",
+      "worldRank": null,
+      "spirit": "Whiskey",
+      "strength": "Light",
+      "glass": "Highball / mason jar",
+      "ingredients": [
+        {
+          "amount": "1½ oz",
+          "item": "Tennessee whiskey or bourbon"
+        },
+        {
+          "amount": "¾ oz",
+          "item": "triple sec"
+        },
+        {
+          "amount": "1 oz",
+          "item": "fresh lemon"
+        },
+        {
+          "amount": "½ oz",
+          "item": "simple"
+        },
+        {
+          "amount": "Top",
+          "item": "7-Up / Sprite"
+        }
+      ],
+      "requires": [
+        {
+          "id": "bourbon",
+          "label": "Bourbon"
+        },
+        {
+          "id": "orange_liq",
+          "label": "Cointreau / triple sec (orange liqueur)"
+        },
+        {
+          "id": "citrus",
+          "label": "Fresh lemons / limes"
+        },
+        {
+          "id": "simple",
+          "label": "Simple syrup / sugar / sugar cubes"
+        },
+        {
+          "id": "lemon_lime",
+          "label": "Sprite / 7-Up (lemon-lime)"
+        }
+      ],
+      "method": "Shake the first four with ice, strain over fresh ice, top with lemon-lime soda.",
+      "note": null,
+      "settings": [
+        "Party",
+        "4th of July",
+        "Beach"
+      ],
+      "source": "Tony Mason, Huntsville, Alabama, 1980",
+      "sourceUrl": null,
+      "img": "",
+      "missing": [],
+      "inStock": true
+    },
+    {
+      "id": "fuzzy-navel",
+      "name": "Fuzzy Navel",
+      "worldRank": null,
+      "spirit": "Mixed",
+      "strength": "Light",
+      "glass": "Highball",
+      "ingredients": [
+        {
+          "amount": "2 oz",
+          "item": "peach schnapps"
+        },
+        {
+          "amount": "4 oz",
+          "item": "orange juice"
+        }
+      ],
+      "requires": [
+        {
+          "id": "peach",
+          "label": "Peach schnapps / purée"
+        },
+        {
+          "id": "oj",
+          "label": "Orange juice"
+        }
+      ],
+      "method": "Build over ice, stir. Add 1 oz vodka to make it a Hairy Navel.",
+      "note": null,
+      "settings": [
+        "Brunch",
+        "Beach",
+        "Party"
+      ],
+      "source": "Ray Foley, with the 1984 launch of Peachtree schnapps",
+      "sourceUrl": null,
+      "img": "",
+      "missing": [
+        "Peach schnapps / purée"
+      ],
+      "inStock": false
+    },
+    {
+      "id": "toasted-almond",
+      "name": "Toasted Almond",
+      "worldRank": null,
+      "spirit": "Mixed",
+      "strength": "Medium",
+      "glass": "Rocks glass",
+      "ingredients": [
+        {
+          "amount": "1 oz",
+          "item": "amaretto"
+        },
+        {
+          "amount": "1 oz",
+          "item": "coffee liqueur"
+        },
+        {
+          "amount": "1 oz",
+          "item": "cream"
+        }
+      ],
+      "requires": [
+        {
+          "id": "amaretto",
+          "label": "Amaretto"
+        },
+        {
+          "id": "coffee_liq",
+          "label": "Coffee liqueur"
+        },
+        {
+          "id": "cream",
+          "label": "Cream / milk"
+        }
+      ],
+      "method": "Shake with ice, strain over fresh ice.",
+      "note": null,
+      "settings": [
+        "Ski resort",
+        "Winter holidays"
+      ],
+      "source": "American creamy classic, 1970s",
+      "sourceUrl": null,
+      "img": "",
+      "missing": [
+        "Coffee liqueur",
+        "Cream / milk"
+      ],
+      "inStock": false
+    },
+    {
+      "id": "shirley-temple",
+      "name": "Shirley Temple",
+      "worldRank": null,
+      "spirit": "Mixed",
+      "strength": "Light",
+      "glass": "Highball",
+      "ingredients": [
+        {
+          "amount": "4 oz",
+          "item": "ginger ale"
+        },
+        {
+          "amount": "½ oz",
+          "item": "grenadine, sunk"
+        },
+        {
+          "amount": "1",
+          "item": "cherry"
+        }
+      ],
+      "requires": [
+        {
+          "id": "ginger_ale",
+          "label": "Ginger ale"
+        },
+        {
+          "id": "grenadine",
+          "label": "Grenadine"
+        }
+      ],
+      "method": "Build over ice; sink the grenadine.",
+      "note": "Zero-proof — for designated drivers and the kids' table.",
+      "settings": [
+        "Party",
+        "4th of July",
+        "Brunch"
+      ],
+      "source": "Hollywood legend, 1930s, named for the child star",
+      "sourceUrl": null,
+      "img": "",
+      "missing": [
+        "Grenadine"
+      ],
+      "inStock": false
     }
   ]
 };
@@ -5328,6 +5726,7 @@ function renderStats(){
   let mk=0;
   DATA.cocktails.forEach(c=>{ if(missing(c).length===0)mk++; });
   document.getElementById('stMake').textContent=mk;
+  document.getElementById('stLib').textContent=DATA.cocktails.length;
   document.getElementById('stMake2').textContent=mk;
   let aw=0; DATA.cocktails.forEach(c=>{ if(missing(c).length===1)aw++; });
   document.getElementById('stAway').textContent=aw;
