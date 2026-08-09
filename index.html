@@ -102,7 +102,8 @@ body{background:#080706; color:var(--rice); font-family:Georgia,'Times New Roman
   radial-gradient(120% 140% at 85% 0%, #A11D2230 0%, transparent 55%),
   radial-gradient(100% 120% at 0% 100%, #B08A3322 0%, transparent 55%),
   linear-gradient(160deg,#241c14,#171310);
-  padding:16px 16px 14px; margin:14px 0 4px; display:flex; gap:14px; align-items:center; cursor:pointer;}
+  padding:16px 16px 14px; margin:14px 0 4px; display:flex; gap:14px; align-items:center; cursor:pointer; transition:opacity .35s ease; min-height:118px;}
+.feat.fading{opacity:0;}
 .feat .fx{font-family:Verdana,Geneva,sans-serif; font-size:9.5px; font-weight:bold; letter-spacing:.35em; text-transform:uppercase; color:var(--gold);}
 .feat h3{font-size:21px; font-weight:normal; margin-top:6px;}
 .feat p{font-size:12px; color:var(--muted); font-style:italic; margin-top:6px; line-height:1.5;}
@@ -152,7 +153,12 @@ body{background:#080706; color:var(--rice); font-family:Georgia,'Times New Roman
 .badge{font-family:Verdana,Geneva,sans-serif; font-size:9.5px; font-weight:bold; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); border:1px solid #574424; border-radius:999px; padding:3.5px 9px;}
 .badge.v{color:#fff; background:var(--vermillion); border-color:var(--vermillion);}
 .sheet .ing{margin-top:18px;}
-.sheet .ing li{list-style:none; display:flex; gap:12px; padding:8px 0; border-bottom:1px dotted #33291f; font-size:14.5px;}
+.sheet .ing li{list-style:none; display:flex; flex-wrap:wrap; gap:12px; padding:8px 0; border-bottom:1px dotted #33291f; font-size:14.5px;}
+.subtag{border-bottom:1px dashed var(--gold); cursor:pointer; color:var(--gold-soft);}
+.subtag .si{font-family:Verdana,Geneva,sans-serif; font-size:10px; color:var(--gold); font-weight:bold;}
+.callout{display:none; width:100%; margin:6px 0 2px; background:#2a2115; border:1px solid #57452a; border-left:3px solid var(--gold); border-radius:10px; padding:10px 13px; font-size:12.5px; color:var(--rice); line-height:1.6;}
+.callout.open{display:block;}
+.callout b{color:var(--gold-soft); font-weight:bold; font-family:Verdana,Geneva,sans-serif; font-size:9.5px; letter-spacing:.12em; text-transform:uppercase;}
 .sheet .ing .amt{color:var(--gold-soft); min-width:74px;}
 .sheet .how{margin-top:16px; font-size:13.5px; color:var(--muted); line-height:1.65;}
 .sheet .how b{color:var(--rice); font-weight:normal; font-style:italic;}
@@ -494,9 +500,14 @@ const DATA = {
           "inStock": true
         },
         {
-          "id": "grapefruit",
-          "label": "Sparkling pink grapefruit / grapefruit juice",
+          "id": "grapefruit_sparkling",
+          "label": "Fever-Tree sparkling pink grapefruit",
           "inStock": true
+        },
+        {
+          "id": "grapefruit_juice",
+          "label": "Grapefruit juice",
+          "inStock": false
         }
       ]
     },
@@ -676,7 +687,7 @@ const DATA = {
         {
           "id": "ginger_fresh",
           "label": "Fresh ginger",
-          "inStock": false
+          "inStock": true
         },
         {
           "id": "raspberry",
@@ -880,7 +891,7 @@ const DATA = {
         },
         {
           "amount": "1 tsp",
-          "item": "sugar / simple"
+          "item": "sugar / simple syrup"
         },
         {
           "amount": "2–3 dashes",
@@ -976,7 +987,7 @@ const DATA = {
         },
         {
           "amount": "¼ oz",
-          "item": "simple"
+          "item": "simple syrup"
         }
       ],
       "requires": [
@@ -1031,7 +1042,7 @@ const DATA = {
         },
         {
           "amount": "¾ oz",
-          "item": "simple"
+          "item": "simple syrup"
         }
       ],
       "requires": [
@@ -1136,8 +1147,8 @@ const DATA = {
           "label": "Tequila"
         },
         {
-          "id": "grapefruit",
-          "label": "Sparkling pink grapefruit / grapefruit juice"
+          "id": "grapefruit_sparkling",
+          "label": "Fever-Tree sparkling pink grapefruit"
         },
         {
           "id": "citrus",
@@ -1175,7 +1186,7 @@ const DATA = {
         },
         {
           "amount": "¾ oz",
-          "item": "simple"
+          "item": "simple syrup"
         }
       ],
       "requires": [
@@ -1275,7 +1286,7 @@ const DATA = {
         },
         {
           "amount": "1 tsp",
-          "item": "rich simple"
+          "item": "rich simple syrup"
         }
       ],
       "requires": [
@@ -1326,7 +1337,7 @@ const DATA = {
         },
         {
           "amount": "¾ oz",
-          "item": "simple"
+          "item": "simple syrup"
         },
         {
           "amount": "8",
@@ -1392,7 +1403,7 @@ const DATA = {
         },
         {
           "amount": "¾ oz",
-          "item": "simple"
+          "item": "simple syrup"
         }
       ],
       "requires": [
@@ -1801,10 +1812,8 @@ const DATA = {
       ],
       "source": "Sam Ross, Milk & Honey, New York, 2005",
       "sourceUrl": null,
-      "inStock": false,
-      "missing": [
-        "Fresh ginger"
-      ],
+      "inStock": true,
+      "missing": [],
       "img": ""
     },
     {
@@ -1825,7 +1834,7 @@ const DATA = {
         },
         {
           "amount": "¾ oz",
-          "item": "simple"
+          "item": "simple syrup"
         },
         {
           "amount": "1",
@@ -1941,7 +1950,7 @@ const DATA = {
         },
         {
           "amount": "½ oz",
-          "item": "simple"
+          "item": "simple syrup"
         },
         {
           "amount": "Top",
@@ -2056,7 +2065,7 @@ const DATA = {
         },
         {
           "amount": "¾ oz",
-          "item": "simple"
+          "item": "simple syrup"
         },
         {
           "amount": "1",
@@ -2178,7 +2187,7 @@ const DATA = {
         },
         {
           "amount": "¾ oz",
-          "item": "simple"
+          "item": "simple syrup"
         },
         {
           "amount": "10",
@@ -2672,7 +2681,7 @@ const DATA = {
         },
         {
           "amount": "½ oz",
-          "item": "simple"
+          "item": "simple syrup"
         },
         {
           "amount": "½ oz",
@@ -3069,7 +3078,7 @@ const DATA = {
         },
         {
           "amount": "¾ oz",
-          "item": "simple"
+          "item": "simple syrup"
         },
         {
           "amount": "6–8",
@@ -3281,7 +3290,7 @@ const DATA = {
         },
         {
           "amount": "½ oz",
-          "item": "simple"
+          "item": "simple syrup"
         },
         {
           "amount": "Top",
@@ -3594,7 +3603,7 @@ const DATA = {
         },
         {
           "amount": "½ oz",
-          "item": "simple"
+          "item": "simple syrup"
         },
         {
           "amount": "8–10",
@@ -4219,7 +4228,7 @@ const DATA = {
         },
         {
           "amount": "½ oz",
-          "item": "simple"
+          "item": "simple syrup"
         }
       ],
       "requires": [
@@ -4327,7 +4336,7 @@ const DATA = {
         },
         {
           "amount": "1 tsp",
-          "item": "simple"
+          "item": "simple syrup"
         },
         {
           "amount": "2 dashes",
@@ -5085,8 +5094,8 @@ const DATA = {
           "label": "Cranberry juice"
         },
         {
-          "id": "grapefruit",
-          "label": "Sparkling pink grapefruit / grapefruit juice"
+          "id": "grapefruit_juice",
+          "label": "Grapefruit juice"
         }
       ],
       "method": "Build over ice.",
@@ -5097,8 +5106,10 @@ const DATA = {
       ],
       "source": "Breeze family, 1970s–80s",
       "sourceUrl": null,
-      "inStock": true,
-      "missing": [],
+      "inStock": false,
+      "missing": [
+        "Grapefruit juice"
+      ],
       "img": ""
     },
     {
@@ -5119,7 +5130,7 @@ const DATA = {
         },
         {
           "amount": "½ oz",
-          "item": "simple"
+          "item": "simple syrup"
         },
         {
           "amount": "Top",
@@ -5429,7 +5440,7 @@ const DATA = {
         },
         {
           "amount": "½ oz",
-          "item": "simple"
+          "item": "simple syrup"
         },
         {
           "amount": "Top",
@@ -5608,6 +5619,78 @@ const DATA = {
         "Grenadine"
       ],
       "inStock": false
+    },
+    {
+      "id": "notorious-rbg",
+      "name": "Notorious R.B.G.",
+      "worldRank": null,
+      "spirit": "Rum",
+      "strength": "Medium",
+      "glass": "Highball / copper mug",
+      "ingredients": [
+        {
+          "amount": "2 oz",
+          "item": "light rum"
+        },
+        {
+          "amount": "¾ oz",
+          "item": "Cointreau"
+        },
+        {
+          "amount": "¾ oz",
+          "item": "fresh lemon juice"
+        },
+        {
+          "amount": "½ oz",
+          "item": "simple syrup"
+        },
+        {
+          "amount": "3–4",
+          "item": "slices fresh ginger, muddled"
+        },
+        {
+          "amount": "Top",
+          "item": "Fever-Tree ginger beer"
+        }
+      ],
+      "requires": [
+        {
+          "id": "rum_light",
+          "label": "Light rum"
+        },
+        {
+          "id": "orange_liq",
+          "label": "Cointreau / triple sec (orange liqueur)"
+        },
+        {
+          "id": "citrus",
+          "label": "Fresh lemons / limes"
+        },
+        {
+          "id": "simple",
+          "label": "Simple syrup / sugar / sugar cubes"
+        },
+        {
+          "id": "ginger_fresh",
+          "label": "Fresh ginger"
+        },
+        {
+          "id": "ginger_beer",
+          "label": "Ginger beer (Fever-Tree)"
+        }
+      ],
+      "method": "Muddle the ginger with the simple syrup, add rum, Cointreau, and lemon; shake hard, strain over fresh ice, top with ginger beer.",
+      "note": "The house favorite — dissent-ently delicious.",
+      "settings": [
+        "Party",
+        "Date night",
+        "Beach"
+      ],
+      "source": "Tribute to Justice Ruth Bader Ginsburg; bar homages spread nationwide in the late 2010s — this is the house spec",
+      "sourceUrl": null,
+      "img": "",
+      "missing": [],
+      "inStock": true
     }
   ]
 };
@@ -5732,13 +5815,26 @@ function renderStats(){
   document.getElementById('stAway').textContent=aw;
   document.getElementById('stStock').textContent=Object.keys(state).filter(k=>state[k]).length;
 }
+let lastFeat='';
+function featuredPool(){ return DATA.cocktails.filter(c=>c.requires.every(r=>state[r.id])); }
 function renderFeatured(){
-  const pick=DATA.cocktails.find(c=>c.id==='japanese-highball')||DATA.cocktails[0];
-  document.getElementById('featured').innerHTML=
-    `<div class="pic">${svgFor(pick,86)}</div><div>
-    <div class="fx">Tonight&rsquo;s pour · 今夜</div><h3>${pick.name}</h3>
-    <p>${pick.note||pick.source}</p></div>`;
-  document.getElementById('featured').onclick=()=>openSheet(pick.id);
+  const elF=document.getElementById('featured');
+  const pool=featuredPool();
+  if(!pool.length){ elF.style.display='none'; return; }
+  elF.style.display='';
+  const day=Math.floor(Date.now()/86400000);          // days since epoch — one pick per calendar day
+  const pick=pool[day % pool.length];
+  if(pick.id===lastFeat && elF.innerHTML.trim()) return; // same day, same drink — nothing to do
+  lastFeat=pick.id;
+  const paint=()=>{
+    elF.innerHTML=`<div class="pic">${svgFor(pick,86)}</div><div>
+      <div class="fx">Tonight&rsquo;s Pour · 今夜</div><h3>${pick.name}</h3>
+      <p>${pick.note||pick.source}</p></div>`;
+    elF.onclick=()=>openSheet(pick.id);
+    elF.classList.remove('fading');
+  };
+  if(elF.innerHTML.trim()){ elF.classList.add('fading'); setTimeout(paint,350); }
+  else paint();
 }
 function renderPills(){
   document.getElementById('pills').innerHTML=SPIRITS.map(s=>`<button class="pill ${s===activeSpirit?'on':''}" data-s="${s}">${s}</button>`).join('');
@@ -5753,7 +5849,7 @@ function renderInventory(){
     state[ch.dataset.id]=!state[ch.dataset.id];
     ch.classList.toggle('on',state[ch.dataset.id]);
     setPreset('Custom'); saveState();
-    renderStats(); renderMenu(); renderTop(); if(currentOcc)renderOccList();
+    renderStats(); renderMenu(); renderTop(); renderFeatured(); if(currentOcc)renderOccList();
   });
 }
 // ---------- presets ----------
@@ -5766,7 +5862,7 @@ function setPreset(name){
 function applyPreset(name){
   Object.keys(state).forEach(k=>state[k]= name==="T's House" ? DEFAULTS[k] : false);
   setPreset(name); saveState();
-  renderStats(); renderMenu(); renderTop(); renderInventory(); if(currentOcc)renderOccList();
+  renderStats(); renderMenu(); renderTop(); renderInventory(); renderFeatured(); if(currentOcc)renderOccList();
 }
 document.getElementById('pTs').onclick=()=>applyPreset("T's House");
 document.getElementById('pEmpty').onclick=()=>applyPreset('Empty Shelf');
@@ -5810,6 +5906,15 @@ document.getElementById('occBack').onclick=()=>{
   document.getElementById('occResults').style.display='none';
 };
 
+// ---------- syrup sub-recipes ----------
+function subFor(t){
+  const s=String(t).toLowerCase();
+  if(s.includes('rich simple syrup')) return {t:'Rich simple syrup — house recipe', b:'2 parts sugar to 1 part hot water. Stir until fully dissolved, cool, bottle. Thicker and sweeter than standard; keeps about a month refrigerated.'};
+  if(s.includes('simple syrup')) return {t:'Simple syrup — house recipe', b:'Equal parts sugar and water (1:1 — e.g. 1 cup each). Stir the sugar into hot (not boiling) water until dissolved, cool, bottle. Keeps ~3 weeks refrigerated.'};
+  if(s.includes('honey-ginger syrup')) return {t:'Honey-ginger syrup', b:'Simmer 1 cup honey, 1 cup water, and a thumb of sliced fresh ginger for 5 minutes. Strain, cool, bottle.'};
+  if(s.includes('honey syrup')) return {t:'Honey syrup', b:'2 parts honey to 1 part warm water, stirred until combined — honey that pours and mixes cold.'};
+  return null;
+}
 // ---------- detail sheet ----------
 function openSheet(id){
   const c=DATA.cocktails.find(x=>x.id===id); if(!c)return;
@@ -5823,11 +5928,19 @@ function openSheet(id){
         <span class="badge">${c.spirit}</span><span class="badge">${c.strength}</span>
       </div></div></div>
     ${m.length?`<div class="missbox">SHOPPING LIST · needs ${m.join(', ')}</div>`:''}
-    <ul class="ing">${c.ingredients.map(i=>`<li><span class="amt">${i.amount}</span><span>${i.item}</span></li>`).join('')}</ul>
+    <ul class="ing">${c.ingredients.map((i,ix)=>{
+      const sub=subFor(i.item);
+      return `<li><span class="amt">${i.amount}</span><span>${sub?`<span class="subtag" data-ix="${ix}">${i.item} <span class="si">ⓘ recipe</span></span>`:i.item}</span>${sub?`<div class="callout" id="co-${ix}"><b>${sub.t}</b><br>${sub.b}</div>`:''}</li>`;
+    }).join('')}</ul>
     <div class="how"><b>${c.method}</b><br>Serve: ${c.glass}${c.note?`<br><span style="color:#7ba888">${c.note}</span>`:''}</div>
     <div class="src">${c.source}${c.worldRank?` · Ranked #${c.worldRank}, Drinks International 2026`:''}</div>
     <div class="meta" style="margin-top:14px">${c.settings.map(s=>`<span class="badge">${s}</span>`).join('')}</div>`;
   document.getElementById('sheetWrap').classList.add('open');
+  document.querySelectorAll('#sheet .subtag').forEach(el=>el.onclick=(e)=>{
+    e.stopPropagation();
+    const co=document.getElementById('co-'+el.dataset.ix);
+    if(co) co.classList.toggle('open');
+  });
 }
 document.getElementById('scrim').onclick=()=>document.getElementById('sheetWrap').classList.remove('open');
 function bindCards(){
@@ -5846,6 +5959,7 @@ document.getElementById('q').addEventListener('input',e=>{query=e.target.value.t
 renderStats(); renderFeatured(); renderPills(); renderMenu(); renderInventory(); renderTop(); renderOccGrid();
 setPreset(presetName);
 if('serviceWorker' in navigator){ window.addEventListener('load', ()=>navigator.serviceWorker.register('./sw.js').catch(()=>{})); }
+setInterval(renderFeatured, 3600000); // hourly check so the pick rolls over at midnight
 </script>
 </body>
 </html>
